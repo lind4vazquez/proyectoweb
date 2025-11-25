@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Carrito — TiendaPC</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body{
+      margin:0;padding:32px;
+      font-family:'Inter',sans-serif;
+      background:linear-gradient(180deg,#071024,#06121c);
+      color:#e6eef6;
+      display:flex;justify-content:center;
+    }
+    .wrap{width:100%;max-width:700px}
+    h1{text-align:center}
+    .cart-box{
+      background:linear-gradient(180deg,#061226,#07182a);
+      padding:20px;border-radius:12px;
+      border:1px solid rgba(255,255,255,0.03);
+    }
+    .muted{color:#9aa4b2}
+    .btn{
+      background:linear-gradient(90deg,#6ee7b7,#34d399);
+      border:0;padding:10px 14px;border-radius:10px;
+      font-weight:700;color:#042022;
+    }
+    a{text-decoration:none}
+    .back{
+      display:inline-block;margin-bottom:20px;
+      color:#6ee7b7;
+    }
+  </style>
+</head>
+
+<body>
+<div class="wrap">
+
+  <a href="index.html" class="back">← Regresar a productos</a>
+
+  <h1>Carrito</h1>
+
+  <div class="cart-box">
+    <p class="muted">Tu carrito está vacío.</p>
+    <div style="display:flex;justify-content:space-between;font-weight:700;margin-top:20px">
+      <span>Total</span>
+      <span>$0.00</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
