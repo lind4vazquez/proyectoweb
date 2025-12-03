@@ -6,9 +6,9 @@ document.addEventListener("DOMContentLoaded", function() {
     gpu: "gpus",
     ram: "ram",
     mb: "motherboards",
-    storage: "storage", // no existe en tu JSON, así que quedará vacío
+    storage: "almacenamiento",
     psu: "psu",
-    case: "case"
+    case: "gabinetes"
   };
 
   const container = document.getElementById("catProducts");
@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function() {
         <strong>${escapeHtml(item.nombre)}</strong>
 
         <div class="meta">
-          ${item.nucleos || item.vram || item.velocidad || item.socket || item.watts || ""}
+          ${item.nucleos || item.vram || item.velocidad || item.socket || item.watts || item.capacidad || item.tipo || item.formato || item.ventiladores || ""}
         </div>
 
         <div class="price">$${item.precio}</div>

@@ -10,6 +10,8 @@
       "nucleos": "6 núcleos / 12 hilos",
       "frecuencia": "4.4 GHz Turbo",
       "tdp": "65W",
+      "tdp_w": 65,
+      "ram_soportada": ["DDR4", "DDR5"],
       "caracteristicas": [
         "Compatible con DDR4 y DDR5",
         "Arquitectura Alder Lake",
@@ -26,6 +28,8 @@
       "nucleos": "8 núcleos / 16 hilos",
       "frecuencia": "4.6 GHz Boost",
       "tdp": "65W",
+      "tdp_w": 65,
+      "ram_soportada": ["DDR4"],
       "caracteristicas": [
         "Arquitectura Zen 3",
         "Excelente rendimiento multicore",
@@ -42,6 +46,8 @@
       "nucleos": "4 núcleos / 8 hilos",
       "frecuencia": "4.3 GHz Turbo",
       "tdp": "60W",
+      "tdp_w": 60,
+      "ram_soportada": ["DDR4", "DDR5"],
       "caracteristicas": [
         "Gran rendimiento por precio",
         "Ideal para gaming económico"
@@ -57,6 +63,8 @@
       "nucleos": "6 núcleos / 12 hilos",
       "frecuencia": "4.6 GHz Boost",
       "tdp": "65W",
+      "tdp_w": 65,
+      "ram_soportada": ["DDR4"],
       "caracteristicas": [
         "Excelente rendimiento en juegos",
         "Compatible con todas las placas AM4"
@@ -72,6 +80,8 @@
       "nucleos": "6 núcleos / 12 hilos",
       "frecuencia": "4.6 GHz Boost",
       "tdp": "65W",
+      "tdp_w": 65,
+      "ram_soportada": ["DDR4"],
       "caracteristicas": [
         "Versión mejorada con mayor disponibilidad"
       ]
@@ -79,76 +89,11 @@
   ],
 
   "gpus": [
-    {
-      "id": "rtx4060",
-      "categoria": "gpu",
-      "nombre": "NVIDIA RTX 4060 Ti",
-      "precio": 6999,
-      "imagenes": ["img/producto.png"],
-      "vram": "8GB GDDR6",
-      "frecuencia": "2535 MHz",
-      "tdp": "160W",
-      "caracteristicas": [
-        "DLSS 3",
-        "Excelente rendimiento 1080p"
-      ]
-    },
-    {
-      "id": "rtx4070s",
-      "categoria": "gpu",
-      "nombre": "NVIDIA RTX 4070 Super",
-      "precio": 12900,
-      "imagenes": ["img/producto.png"],
-      "vram": "12GB GDDR6X",
-      "frecuencia": "2475 MHz",
-      "tdp": "220W",
-      "caracteristicas": [
-        "DLSS 3",
-        "Gran rendimiento en 1440p"
-      ]
-    },
-    {
-      "id": "rx6700xt",
-      "categoria": "gpu",
-      "nombre": "AMD RX 6700 XT",
-      "precio": 7200,
-      "imagenes": ["img/producto.png"],
-      "vram": "12GB GDDR6",
-      "frecuencia": "2581 MHz",
-      "tdp": "230W",
-      "caracteristicas": [
-        "Excelente para 1440p",
-        "Gran relación precio/rendimiento"
-      ]
-    },
-    {
-      "id": "rtx3050",
-      "categoria": "gpu",
-      "nombre": "NVIDIA RTX 3050",
-      "precio": 3800,
-      "imagenes": ["img/producto.png"],
-      "vram": "8GB GDDR6",
-      "frecuencia": "1777 MHz",
-      "tdp": "130W",
-      "caracteristicas": [
-        "Ray Tracing básico",
-        "Ideal para 1080p"
-      ]
-    },
-    {
-      "id": "rx7600",
-      "categoria": "gpu",
-      "nombre": "AMD Radeon RX 7600",
-      "precio": 5490,
-      "imagenes": ["img/producto.png"],
-      "vram": "8GB GDDR6",
-      "frecuencia": "2655 MHz",
-      "tdp": "165W",
-      "caracteristicas": [
-        "Gran rendimiento 1080p",
-        "Consumo eficiente"
-      ]
-    }
+    { "id": "rtx4060", "categoria": "gpu", "nombre": "NVIDIA RTX 4060 Ti", "precio": 6999, "imagenes": ["img/producto.png"], "vram": "8GB GDDR6", "frecuencia": "2535 MHz", "tdp": "160W", "consumo_w": 160, "caracteristicas": ["DLSS 3", "Excelente rendimiento 1080p"] },
+    { "id": "rtx4070s", "categoria": "gpu", "nombre": "NVIDIA RTX 4070 Super", "precio": 12900, "imagenes": ["img/producto.png"], "vram": "12GB GDDR6X", "frecuencia": "2475 MHz", "tdp": "220W", "consumo_w": 220, "caracteristicas": ["DLSS 3", "Gran rendimiento en 1440p"] },
+    { "id": "rx6700xt", "categoria": "gpu", "nombre": "AMD RX 6700 XT", "precio": 7200, "imagenes": ["img/producto.png"], "vram": "12GB GDDR6", "frecuencia": "2581 MHz", "tdp": "230W", "consumo_w": 230, "caracteristicas": ["Excelente para 1440p", "Gran relación precio/rendimiento"] },
+    { "id": "rtx3050", "categoria": "gpu", "nombre": "NVIDIA RTX 3050", "precio": 3800, "imagenes": ["img/producto.png"], "vram": "8GB GDDR6", "frecuencia": "1777 MHz", "tdp": "130W", "consumo_w": 130, "caracteristicas": ["Ray Tracing básico", "Ideal para 1080p"] },
+    { "id": "rx7600", "categoria": "gpu", "nombre": "AMD Radeon RX 7600", "precio": 5490, "imagenes": ["img/producto.png"], "vram": "8GB GDDR6", "frecuencia": "2655 MHz", "tdp": "165W", "consumo_w": 165, "caracteristicas": ["Gran rendimiento 1080p", "Consumo eficiente"] }
   ],
 
   "ram": [
@@ -205,113 +150,79 @@
   ],
 
   "motherboards": [
-    {
-      "id": "b450m",
-      "categoria": "motherboard",
-      "nombre": "MSI B450M Pro-M2",
-      "precio": 1250,
-      "imagenes": ["img/producto.png"],
-      "socket": "AM4",
-      "ram": "DDR4",
-      "formato": "Micro ATX",
-      "caracteristicas": ["PCIe 3.0", "Compatible Ryzen 1000–5000"]
-    },
-    {
-      "id": "b660m",
-      "categoria": "motherboard",
-      "nombre": "Gigabyte B660M DS3H",
-      "precio": 2150,
-      "imagenes": ["img/producto.png"],
-      "socket": "LGA1700",
-      "ram": "DDR4",
-      "formato": "Micro ATX",
-      "caracteristicas": ["PCIe 4.0", "Ideal para Intel 12/13 gen"]
-    },
-    {
-      "id": "x570",
-      "categoria": "motherboard",
-      "nombre": "X570 Aorus Elite",
-      "precio": 3990,
-      "imagenes": ["img/producto.png"],
-      "socket": "AM4",
-      "ram": "DDR4",
-      "formato": "ATX",
-      "caracteristicas": ["PCIe 4.0", "VRM de alta calidad"]
-    },
-    {
-      "id": "a520m",
-      "categoria": "motherboard",
-      "nombre": "ASUS A520M-K",
-      "precio": 1490,
-      "imagenes": ["img/producto.png"],
-      "socket": "AM4",
-      "ram": "DDR4",
-      "formato": "Micro ATX",
-      "caracteristicas": ["Económica y funcional"]
-    },
-    {
-      "id": "z690",
-      "categoria": "motherboard",
-      "nombre": "ASUS Z690-P WiFi",
-      "precio": 5200,
-      "imagenes": ["img/producto.png"],
-      "socket": "LGA1700",
-      "ram": "DDR5",
-      "formato": "ATX",
-      "caracteristicas": ["PCIe 5.0", "Incluye WiFi 6"]
-    }
+    { "id": "b450m", "categoria": "motherboard", "nombre": "MSI B450M Pro-M2", "precio": 1250, "imagenes": ["img/producto.png"], "socket": "AM4", "ram": "DDR4", "ram_tipo": "DDR4", "formato": "Micro ATX", "caracteristicas": ["PCIe 3.0", "Compatible Ryzen 1000–5000"] },
+    { "id": "b660m", "categoria": "motherboard", "nombre": "Gigabyte B660M DS3H", "precio": 2150, "imagenes": ["img/producto.png"], "socket": "LGA1700", "ram": "DDR4", "ram_tipo": "DDR4", "formato": "Micro ATX", "caracteristicas": ["PCIe 4.0", "Ideal para Intel 12/13 gen"] },
+    { "id": "x570", "categoria": "motherboard", "nombre": "X570 Aorus Elite", "precio": 3990, "imagenes": ["img/producto.png"], "socket": "AM4", "ram": "DDR4", "ram_tipo": "DDR4", "formato": "ATX", "caracteristicas": ["PCIe 4.0", "VRM de alta calidad"] },
+    { "id": "a520m", "categoria": "motherboard", "nombre": "ASUS A520M-K", "precio": 1490, "imagenes": ["img/producto.png"], "socket": "AM4", "ram": "DDR4", "ram_tipo": "DDR4", "formato": "Micro ATX", "caracteristicas": ["Económica y funcional"] },
+    { "id": "z690", "categoria": "motherboard", "nombre": "ASUS Z690-P WiFi", "precio": 5200, "imagenes": ["img/producto.png"], "socket": "LGA1700", "ram": "DDR5", "ram_tipo": "DDR5", "formato": "ATX", "caracteristicas": ["PCIe 5.0", "Incluye WiFi 6"] }
   ],
 
   "psu": [
+    { "id": "650w-bronze", "categoria": "psu", "nombre": "Fuente 650W Bronze", "precio": 1499, "imagenes": ["img/producto.png"], "watts": 650, "certificacion": "80+ Bronze", "caracteristicas": ["Cableado completo", "Buena eficiencia"] },
+    { "id": "450w-basic", "categoria": "psu", "nombre": "Fuente 450W Certificada", "precio": 590, "imagenes": ["img/producto.png"], "watts": 450, "certificacion": "80+ White", "caracteristicas": ["Ideal para PCs de oficina"] },
+    { "id": "750w-gold", "categoria": "psu", "nombre": "Fuente 750W Gold", "precio": 2199, "imagenes": ["img/producto.png"], "watts": 750, "certificacion": "80+ Gold", "caracteristicas": ["Alta eficiencia", "Silenciosa"] },
+    { "id": "550w-bronze", "categoria": "psu", "nombre": "Fuente 550W Bronze", "precio": 799, "imagenes": ["img/producto.png"], "watts": 550, "certificacion": "80+ Bronze", "caracteristicas": ["Asequible y estable"] },
+    { "id": "850w-gold", "categoria": "psu", "nombre": "Fuente 850W Gold", "precio": 2890, "imagenes": ["img/producto.png"], "watts": 850, "certificacion": "80+ Gold", "caracteristicas": ["Perfecta para GPUs de gama alta"] }
+  ],
+
+  "almacenamiento": [
     {
-      "id": "650w-bronze",
-      "categoria": "psu",
-      "nombre": "Fuente 650W Bronze",
-      "precio": 1499,
-      "imagenes": ["img/producto.png"],
-      "watts": 650,
-      "certificacion": "80+ Bronze",
-      "caracteristicas": ["Cableado completo", "Buena eficiencia"]
-    },
-    {
-      "id": "450w-basic",
-      "categoria": "psu",
-      "nombre": "Fuente 450W Certificada",
+      "id": "ssd-480-sata",
+      "categoria": "almacenamiento",
+      "nombre": "SSD 480GB SATA",
       "precio": 590,
       "imagenes": ["img/producto.png"],
-      "watts": 450,
-      "certificacion": "80+ White",
-      "caracteristicas": ["Ideal para PCs de oficina"]
+      "tipo": "SATA",
+      "capacidad": "480GB",
+      "caracteristicas": ["Arranque rápido", "Buena durabilidad"]
     },
     {
-      "id": "750w-gold",
-      "categoria": "psu",
-      "nombre": "Fuente 750W Gold",
-      "precio": 2199,
+      "id": "ssd-1tb-nvme",
+      "categoria": "almacenamiento",
+      "nombre": "SSD 1TB NVMe M.2",
+      "precio": 1290,
       "imagenes": ["img/producto.png"],
-      "watts": 750,
-      "certificacion": "80+ Gold",
-      "caracteristicas": ["Alta eficiencia", "Silenciosa"]
+      "tipo": "NVMe",
+      "capacidad": "1TB",
+      "caracteristicas": ["Alta velocidad", "Ideal para gaming"]
     },
     {
-      "id": "550w-bronze",
-      "categoria": "psu",
-      "nombre": "Fuente 550W Bronze",
-      "precio": 799,
+      "id": "hdd-1tb",
+      "categoria": "almacenamiento",
+      "nombre": "Disco Duro 1TB 7200RPM",
+      "precio": 690,
       "imagenes": ["img/producto.png"],
-      "watts": 550,
-      "certificacion": "80+ Bronze",
-      "caracteristicas": ["Asequible y estable"]
+      "tipo": "HDD",
+      "capacidad": "1TB",
+      "caracteristicas": ["Gran capacidad", "Ideal para archivos"]
     },
     {
-      "id": "850w-gold",
-      "categoria": "psu",
-      "nombre": "Fuente 850W Gold",
-      "precio": 2890,
+      "id": "ssd-500-nvme",
+      "categoria": "almacenamiento",
+      "nombre": "SSD 500GB NVMe",
+      "precio": 890,
       "imagenes": ["img/producto.png"],
-      "watts": 850,
-      "certificacion": "80+ Gold",
-      "caracteristicas": ["Perfecta para GPUs de gama alta"]
+      "tipo": "NVMe",
+      "capacidad": "500GB",
+      "caracteristicas": ["Velocidades altas", "Formato compacto"]
+    },
+    {
+      "id": "hdd-2tb",
+      "categoria": "almacenamiento",
+      "nombre": "Disco Duro 2TB 7200RPM",
+      "precio": 1090,
+      "imagenes": ["img/producto.png"],
+      "tipo": "HDD",
+      "capacidad": "2TB",
+      "caracteristicas": ["Mayor almacenamiento", "Ideal para respaldos"]
     }
+  ],
+
+    "gabinetes": [
+    { "id": "case-micro-atx", "categoria": "gabinetes", "nombre": "Gabinete Micro ATX RGB", "precio": 890, "imagenes": ["img/producto.png"], "formato": "Micro ATX", "formatos_soportados": ["Micro ATX"], "ventiladores": "3 incluidos", "caracteristicas": ["Panel de vidrio", "Buena ventilación"] },
+    { "id": "case-atx-gamer", "categoria": "gabinetes", "nombre": "Gabinete ATX Gamer", "precio": 1290, "imagenes": ["img/producto.png"], "formato": "ATX", "formatos_soportados": ["ATX", "Micro ATX"], "ventiladores": "4 incluidos", "caracteristicas": ["Espacio para GPUs grandes", "RGB frontal"] },
+    { "id": "case-mini-itx", "categoria": "gabinetes", "nombre": "Gabinete Mini ITX Compacto", "precio": 990, "imagenes": ["img/producto.png"], "formato": "Mini ITX", "formatos_soportados": ["Mini ITX"], "ventiladores": "2 incluidos", "caracteristicas": ["Diseño compacto", "Ideal para setups pequeños"] },
+    { "id": "case-atx-premium", "categoria": "gabinetes", "nombre": "Gabinete ATX Premium", "precio": 1890, "imagenes": ["img/producto.png"], "formato": "ATX", "formatos_soportados": ["ATX", "Micro ATX"], "ventiladores": "5 incluidos", "caracteristicas": ["Vidrio templado", "Gestión de cables"] },
+    { "id": "case-budget", "categoria": "gabinetes", "nombre": "Gabinete Económico ATX", "precio": 690, "imagenes": ["img/producto.png"], "formato": "ATX", "formatos_soportados": ["ATX", "Micro ATX"], "ventiladores": "1 incluido", "caracteristicas": ["Básico", "Compatible con ATX y Micro ATX"] }
   ]
 }
