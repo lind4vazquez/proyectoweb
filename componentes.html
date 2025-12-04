@@ -140,7 +140,9 @@
           return null;
         }
 
+
         const producto = findProduct();
+        window.productoActual = producto;
 
         if (!producto) {
           // sugerencias
@@ -294,7 +296,7 @@
 
     ${detallesHtml}
 
-    <button class="btn btn-success mt-3 w-100">Agregar al carrito</button>
+    <button class="btn btn-success mt-3 w-100" id="addToCartBtn">Agregar al carrito</button>
   </div>
 `;
         showMessage(html);
@@ -313,6 +315,9 @@
         .replaceAll(">", "&gt;");
     }
   </script>
+
+<script src="carrito-add.js"></script>
+
 
 </body>
 </html>
