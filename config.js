@@ -235,3 +235,21 @@ function validarSistema() {
     }
   }
 }
+
+/* ===========================
+   ENVIAR TOTAL A PAGO ✅
+=========================== */
+const btnPagar = document.getElementById("btnPagarConfig");
+
+btnPagar.addEventListener("click", () => {
+  let total = 0;
+
+  Object.values(seleccion).forEach(comp => {
+    if (comp && comp.precio) {
+      total += parseFloat(comp.precio);
+    }
+  });
+
+  localStorage.setItem("totalConfig", total);
+  window.location.href = "pago.html";
+});
