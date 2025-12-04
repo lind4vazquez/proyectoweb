@@ -1,3 +1,9 @@
+<?php
+session_start();
+echo "<pre>";
+var_dump($_SESSION);
+echo "</pre>";
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -11,7 +17,7 @@
 
   <div class="container py-5">
 
-    <a href="index.html" class="btn btn-secondary mb-4">← Volver</a>
+    <a href="index.php" class="btn btn-secondary mb-4">← Volver</a>
 
     <div id="product-container" class="row g-4">
       <!-- Aquí se cargará dinámicamente el componente -->
@@ -160,7 +166,7 @@
           if (suggestions.length > 0) {
             html += "<h5>Quizá buscabas:</h5><ul>";
             suggestions.forEach(s => {
-              html += `<li><a href="componentes.html?id=${encodeURIComponent(s.id)}">${escapeHtml(s.nombre)}</a></li>`;
+              html += `<li><a href="componentes.php?id=${encodeURIComponent(s.id)}">${escapeHtml(s.nombre)}</a></li>`;
             });
             html += "</ul>";
           } else {

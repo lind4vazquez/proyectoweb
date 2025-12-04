@@ -1,3 +1,9 @@
+<?php
+session_start();
+echo "<pre>";
+var_dump($_SESSION);
+echo "</pre>";
+?>
 <!doctype html>
 <html lang="es">
 <head>
@@ -38,7 +44,7 @@
 <body>
 <div class="wrap">
 
-  <a href="index.html" class="back">← Regresar a productos</a>
+  <a href="index.php" class="back">← Regresar a productos</a>
 
   <h1>Carrito</h1>
 
@@ -50,7 +56,7 @@
     </div>
   </div>
 
-    <a href="pago.html" 
+    <a href="pago.php" 
    style="
       display:inline-block;
       margin-top:25px;

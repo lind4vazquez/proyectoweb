@@ -27,9 +27,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
             // Guardar sesión
             $_SESSION['usuario_id'] = $fila['id'];
+            $_SESSION['id_usuario'] = $fila['id'];
             $_SESSION['usuario'] = $fila['usuario'];
 
-            header("Location: index.html");
+            header("Location: index.php");
             exit;
         } else {
             echo "Contraseña incorrecta.";

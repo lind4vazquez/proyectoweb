@@ -1,3 +1,10 @@
+<?php
+session_start();
+echo "<pre>";
+var_dump($_SESSION);
+echo "</pre>";
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -31,7 +38,9 @@
   <div class="case-box p-4">
     <h3 class="text-center mb-3">Pago con Tarjeta</h3>
 
-    <form action="seguimiento.html" method="GET">
+    <form action="seguimiento.php" method="post">
+      <input type="hidden" id="totalPagoInput" name="totalPago">
+
 
       <!-- DATOS DE TARJETA -->
       <div class="mb-3">

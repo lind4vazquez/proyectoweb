@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function() {
       article.style.cursor = "pointer";
 
       article.addEventListener("click", () => {
-        location.href = `componentes.html?id=${item.id}`;
+        location.href = `componentes.php?id=${item.id}`;
       });
 
       article.innerHTML = `

@@ -2,20 +2,29 @@ const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 const totalConfig = Number(localStorage.getItem("totalConfig")) || 0;
 
 let total = 0;
-
-// Si viene del configurador
 if (totalConfig > 0) {
   total = totalConfig;
-} 
-// Si viene del carrito normal
-else {
+} else {
   carrito.forEach(p => {
     total += p.precio * p.cantidad;
   });
 }
 
-const totalPago = document.getElementById("totalPago");
+const totalPagoSpan = document.getElementById("totalPago");
+const totalPagoInput = document.getElementById("totalPagoInput");
 
-if (totalPago) {
-  totalPago.textContent = "$" + total;
+if (totalPagoSpan) {
+  totalPagoSpan.textContent = "$" + total.toFixed(2);
+}
+if (totalPagoInput) {
+  // poner el valor sin el signo para que PHP lo reciba bien (ej: 120.50)
+  totalPagoInput.value = total.toFixed(2);
+}
+
+// (Opcional) asegurar que justo antes de enviar se actualice el input
+const formPago = document.getElementById("formPago");
+if (formPago) {
+  formPago.addEventListener("submit", () => {
+    totalPagoInput.value = total.toFixed(2);
+  });
 }

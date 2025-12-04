@@ -1,3 +1,10 @@
+<?php
+session_start();
+echo "<pre>";
+var_dump($_SESSION);
+echo "</pre>";
+?>
+
 <!doctype html>
 <html lang="es">
 <head>
@@ -34,7 +41,7 @@
       <a href="config.html">Configura tu PC</a>
     </nav>
 
-    <a href="carrito.html">
+    <a href="carrito.php">
       <button class="btn">Carrito</button>
     </a>
   </header>
@@ -76,28 +83,28 @@
 <!-- PRODUCTOS -->
 <div class="products">
 
-  <article class="pro" onclick="location.href='componentes.html?id=r5-5600x'">
+  <article class="pro" onclick="location.href='componentes.php?id=r5-5600x'">
     <div class="thumb"><img src="img/procesadores/4.jpg" alt="CPU"></div>
     <strong>Procesador Ryzen 5 5600X</strong>
     <div class="meta">6 núcleos / 12 hilos</div>
     <div class="price">$3,490</div>
   </article>
 
-  <article class="pro" onclick="location.href='componentes.html?id=rtx4060'">
+  <article class="pro" onclick="location.href='componentes.php?id=rtx4060'">
     <div class="thumb"><img src="img/grafica/1.jpg" alt="CPU"></div>
     <strong>NVIDIA RTX 4060 Ti</strong>
     <div class="meta">8GB GDDR6</div>
     <div class="price">$6,999</div>
   </article>
 
-  <article class="pro" onclick="location.href='componentes.html?id=ddr4-16-3200'">
+  <article class="pro" onclick="location.href='componentes.php?id=ddr4-16-3200'">
     <div class="thumb"><img src="img/almacenamiento/1.jpg" alt="CPU"></div>
     <strong>Memoria DDR4 16GB</strong>
     <div class="meta">3200MHz</div>
     <div class="price">$890</div>
   </article>
 
-  <article class="pro" onclick="location.href='componentes.html?id=650w-bronze'">
+  <article class="pro" onclick="location.href='componentes.php?id=650w-bronze'">
     <div class="thumb"><img src="img/fuente/1.jpg" alt="CPU"></div>
     <strong>Fuente 650W Bronze</strong>
     <div class="meta">Modular parcial</div>

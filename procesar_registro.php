@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $sql->close();
         $conexion->close();
         // Redirigir
-        header("Location: index.html");
+        header("Location: index.php");
         exit();
     } else {
         // Mostrar error del statement (útil para depurar)

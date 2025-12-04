@@ -251,5 +251,5 @@ btnPagar.addEventListener("click", () => {
   });
 
   localStorage.setItem("totalConfig", total);
-  window.location.href = "pago.html";
+  window.location.href = "pago.php";
 });
