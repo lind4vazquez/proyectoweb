@@ -18,30 +18,74 @@ $monto_raw = $_POST['totalPago'] ?? null;
 // Si no se recibió monto, podemos mostrar error o continuar mostrando la página sin guardar.
 if ($monto_raw !== null && $monto_raw !== '') {
 
-    // Normalizar monto a float
     $monto = floatval(str_replace(',', '.', $monto_raw));
 
     if ($monto <= 0) {
         $error = "Monto inválido: $monto_raw";
     } else {
-        // Preparar e insertar
+
+        // INSERTAR VENTA
         $stmt = $conexion->prepare("INSERT INTO ventas(id_usuario, monto) VALUES (?, ?)");
         if (!$stmt) {
             $error = "Error en prepare(): " . $conexion->error;
         } else {
-            // 'i' para id entero, 'd' para double (decimal)
             $stmt->bind_param("id", $id_usuario, $monto);
             if ($stmt->execute()) {
                 $insert_ok = true;
-                // opcional: obtener id_compra insertado
                 $id_compra = $stmt->insert_id;
             } else {
                 $error = "Error al ejecutar la consulta: " . $stmt->error;
             }
             $stmt->close();
         }
+
+        // 🔹🔹🔹 NUEVO: INSERTAR DIRECCIÓN 🔹🔹🔹
+        if (empty($error)) {
+
+            $estado     = $_POST['estado'] ?? null;
+            $ciudad     = $_POST['ciudad'] ?? null;
+            $cp         = $_POST['cp'] ?? null;
+            $colonia    = $_POST['colonia'] ?? null;
+            $calle      = $_POST['calle'] ?? null;
+            $num_ex     = $_POST['num_ex'] ?? null;
+            $num_in     = $_POST['num_in'] ?? null;
+            $referencia = $_POST['referencia'] ?? null;
+
+            // Insertar solo si el usuario llenó el formulario
+            if ($estado && $ciudad && $cp && $colonia && $calle && $num_ex) {
+
+                $dir = $conexion->prepare("
+                    INSERT INTO direcciones
+                    (id_usuario, estado, ciudad, cp, colonia, calle, num_ex, num_in, referencia)
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+                ");
+
+                $dir->bind_param(
+                    "issssssss",
+                    $id_usuario,
+                    $estado,
+                    $ciudad,
+                    $cp,
+                    $colonia,
+                    $calle,
+                    $num_ex,
+                    $num_in,
+                    $referencia
+                );
+
+                if ($dir->execute()) {
+                    $direccion_ok = true;
+                } else {
+                    $error = "Error insertando dirección: " . $dir->error;
+                }
+
+                $dir->close();
+            }
+        }
+        // 🔹🔹🔹 FIN NUEVO 🔹🔹🔹
     }
 }
+
 
 $codigoSeguimiento = chr(rand(65,90)) . rand(100000, 999999);
 ?>

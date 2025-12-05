@@ -31,7 +31,7 @@
   <div class="case-box p-4">
     <h3 class="text-center mb-3">Pago con Tarjeta</h3>
 
-    <form action="seguimiento.php" method="post">
+    <form id=formPago action="seguimiento.php" method="post">
       <input type="hidden" id="totalPagoInput" name="totalPago">
 
 
@@ -65,47 +65,47 @@
       <div class="row">
         <div class="col-md-6 mb-3">
           <label class="form-label">Estado</label>
-          <input type="text" class="form-control custom-select" placeholder="Estado" required>
+          <input type="text" class="form-control custom-select" placeholder="Estado" name="estado" required>
         </div>
 
         <div class="col-md-6 mb-3">
           <label class="form-label">Ciudad</label>
-          <input type="text" class="form-control custom-select" placeholder="Ciudad" required>
+          <input type="text" class="form-control custom-select" placeholder="Ciudad" estado="ciudad" required>
         </div>
       </div>
 
       <div class="row">
         <div class="col-md-6 mb-3">
           <label class="form-label">Código Postal</label>
-          <input type="text" class="form-control custom-select" placeholder="00000" required>
+          <input type="text" class="form-control custom-select" placeholder="00000" name="cp" required>
         </div>
 
         <div class="col-md-6 mb-3">
           <label class="form-label">Colonia</label>
-          <input type="text" class="form-control custom-select" placeholder="Colonia" required>
+          <input type="text" class="form-control custom-select" placeholder="Colonia" name="colonia" required>
         </div>
       </div>
 
       <div class="mb-3">
         <label class="form-label">Calle</label>
-        <input type="text" class="form-control custom-select" placeholder="Nombre de la calle" required>
+        <input type="text" class="form-control custom-select" placeholder="Nombre de la calle" name="calle" required>
       </div>
 
       <div class="row">
         <div class="col-md-6 mb-3">
           <label class="form-label">Número Exterior</label>
-          <input type="text" class="form-control custom-select" placeholder="123" required>
+          <input type="text" class="form-control custom-select" placeholder="123" name="num_ex" required>
         </div>
 
         <div class="col-md-6 mb-3">
           <label class="form-label">Número Interior (Opcional)</label>
-          <input type="text" class="form-control custom-select" placeholder="A-2">
+          <input type="text" class="form-control custom-select" placeholder="A-2" name="num_in">
         </div>
       </div>
 
       <div class="mb-3">
         <label class="form-label">Referencia</label>
-        <textarea class="form-control custom-select" rows="2" placeholder="Casa color azul, portón negro, etc."></textarea>
+        <textarea class="form-control custom-select" rows="2" placeholder="Casa color azul, portón negro, etc." name="referencia"></textarea>
       </div>
 
       <hr class="my-4">
