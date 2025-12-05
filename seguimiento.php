@@ -26,16 +26,20 @@ if ($monto_raw !== null && $monto_raw !== '') {
 
         // INSERTAR VENTA
         $stmt = $conexion->prepare("INSERT INTO ventas(id_usuario, monto) VALUES (?, ?)");
+
         if (!$stmt) {
             $error = "Error en prepare(): " . $conexion->error;
         } else {
+
             $stmt->bind_param("id", $id_usuario, $monto);
+
             if ($stmt->execute()) {
                 $insert_ok = true;
                 $id_compra = $stmt->insert_id;
             } else {
                 $error = "Error al ejecutar la consulta: " . $stmt->error;
             }
+
             $stmt->close();
         }
 
@@ -55,9 +59,10 @@ if ($monto_raw !== null && $monto_raw !== '') {
             if ($estado && $ciudad && $cp && $colonia && $calle && $num_ex) {
 
                 $dir = $conexion->prepare("
-                    INSERT INTO direcciones
-                    (id_usuario, estado, ciudad, cp, colonia, calle, num_ex, num_in, referencia)
-                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    INSERT INTO direcciones 
+                        (id_usuario, estado, ciudad, cp, colonia, calle, num_ex, num_in, referencia) 
+                    VALUES 
+                        (?, ?, ?, ?, ?, ?, ?, ?, ?)
                 ");
 
                 $dir->bind_param(
@@ -86,43 +91,74 @@ if ($monto_raw !== null && $monto_raw !== '') {
     }
 }
 
-
-$codigoSeguimiento = chr(rand(65,90)) . rand(100000, 999999);
+$codigoSeguimiento = chr(rand(65, 90)) . rand(100000, 999999);
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Seguimiento de Pedido</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="estilo.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Seguimiento de Pedido</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="estilo.css" rel="stylesheet">
 </head>
+
 <body>
-<div class="wrap">
-    <header>... tu header ...</header>
+    <div class="wrap">
 
-    <?php if (!empty($error)): ?>
-        <div style="background:pink; color:#900; padding:10px; border-radius:6px;">
-            <?= htmlspecialchars($error) ?>
-        </div>
-    <?php endif; ?>
-
-    <?php if (!empty($insert_ok)): ?>
-        <div style="background:#e7ffe7; color:#080; padding:10px; border-radius:6px;">
-            Compra registrada correctamente. ID compra: <?= htmlspecialchars($id_compra) ?>
-        </div>
-    <?php endif; ?>
-
-    <div style="margin-bottom:20px; ...">
-        Código de seguimiento:
-        <span id="codigoSeguimiento"><?= htmlspecialchars($codigoSeguimiento) ?></span>
+        <header>
+    <div class="logo">
+      <div class="mark">
+        <img src="img/logoPagina.jpg" alt="Logo">
+      </div>
+      <div>
+        <strong>TiendaPC</strong>
+        <div style="font-size:12px;color:var(--muted)">Componentes y ensamblaje</div>
+      </div>
     </div>
 
-    <!-- resto de la vista -->
-</div>
+    <div class="search-box">
+      <input type="text" placeholder="Buscar productos...">
+    </div>
 
-<script>
- // Si quieres seguir mostrando un código JS, puedes sincronizar con PHP o quitar esto.
-</script>
+    <nav>
+      <a href="index.php">Inicio</a>
+      <a href="sesion.html">Ingresar</a>
+      <a href="config.php">Configura tu PC</a>
+    </nav>
+
+    <a href="carrito.php">
+      <button class="btn">Carrito</button>
+    </a>
+  </header>
+
+        <?php if (!empty($error)): ?>
+            <div style="background:pink; color:#900; padding:10px; border-radius:6px;">
+                <?= htmlspecialchars($error) ?>
+            </div>
+        <?php endif; ?>
+
+        <?php if (!empty($insert_ok)): ?>
+            <div style="background:#e7ffe7; color:#080; padding:10px; border-radius:6px;">
+                Compra registrada correctamente. ID compra:
+                <?= htmlspecialchars($id_compra) ?>
+            </div>
+        <?php endif; ?>
+
+        <div style="margin-bottom:20px;">
+            Código de seguimiento:
+            <span id="codigoSeguimiento">
+                <?= htmlspecialchars($codigoSeguimiento) ?>
+            </span>
+        </div>
+
+        <!-- resto de la vista -->
+
+    </div>
+
+    <script>
+        // Si quieres seguir mostrando un código JS, puedes sincronizar con PHP o quitar esto.
+    </script>
+
 </body>
 </html>

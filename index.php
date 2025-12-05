@@ -128,5 +128,30 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="categoria.js" defer></script>
 
+<br>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>Tienda PC</h3>
+            <p>Gracias por visitarnos.</p>
+        </div>
+
+        <div class="footer-section">
+            <h4>Enlaces rápidos</h4>
+            <ul>
+                <li><a href="index.php">Inicio</a></li>
+                <li><a href="#">Ingresar</a></li>
+                <li><a href="#">Contacto</a></li>
+                <li><a href="#">Ayuda</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; Tienda PC - Todos los derechos reservados.</p>
+    </div>
+</footer>
+
 </body>
 </html>

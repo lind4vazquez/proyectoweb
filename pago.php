@@ -21,7 +21,7 @@
 
 <header>
   <div class="logo">
-    <div class="mark"><img src="logo.png" alt=""></div>
+    <div class="mark"><img src="img/logoPagina.jpg" alt=""></div>
     <h2>Pago</h2>
   </div>
 </header>
