@@ -30,12 +30,12 @@
     </div>
 
     <nav>
-      <a href="index.html">Inicio</a>
+      <a href="index.php">Inicio</a>
       <a href="registro.html">Registro</a>
       <a href="#">Configura tu PC</a>
     </nav>
 
-    <a href="carrito.html">
+    <a href="carrito.php">
       <button class="btn">Carrito</button>
     </a>
   </header>
@@ -45,47 +45,13 @@
   ========================== -->
   <section class="config-wrap mt-4">
 
-    <h2 class="mb-4">CONFIGURAR PC</h2>
 
-    <!-- FILTROS SUPERIORES -->
-    <div class="row g-3 mb-4">
-        <div class="col-md-3">
-            <select class="form-select custom-select">
-                <option selected>Configuración libre</option>
-                <option>Gaming</option>
-                <option>Ofimática</option>
-            </select>
-        </div>
 
-        <div class="col-md-3">
-            <select class="form-select custom-select">
-                <option selected>Uso</option>
-                <option>Juegos</option>
-                <option>Estudio</option>
-                <option>Trabajo</option>
-            </select>
-        </div>
-
-        <div class="col-md-3">
-            <select class="form-select custom-select">
-                <option selected>Presupuesto</option>
-                <option>$5,000</option>
-                <option>$10,000</option>
-                <option>$20,000</option>
-            </select>
-        </div>
-
-        <div class="col-md-3">
-            <select class="form-select custom-select">
-                <option selected>Plataforma</option>
-                <option>Intel</option>
-                <option>AMD</option>
-            </select>
-        </div>
-    </div>
 
     <!-- CUERPO PRINCIPAL -->
     <div class="row g-4">
+
+            <h2 class="mb-4">CONFIGURAR PC</h2>
 
         <!-- IMAGEN GABINETE -->
         <div class="col-md-4">
@@ -122,12 +88,6 @@
                     </div>
                 </div>
 
-                <div class="col-md-6">
-                    <div class="comp-card">
-                        <strong>Disipador CPU</strong>
-                        <button class="select-btn mt-2">Seleccionar componente</button>
-                    </div>
-                </div>
 
                 <div class="col-md-6">
                     <div class="comp-card">
@@ -163,10 +123,21 @@
     </div>
   </section>
 
+  <div class="total-box mb-3 p-3 text-end">
+    <strong>Total:</strong>
+  <span id="totalPrecio">$0</span>
+
+  <div class="text-end mb-5">
+    <button class="btn" id="btnPagarConfig">Ir a Pagar</button>
+  </div>
+
+</div>
+
 </div>
 
 <!-- Bootstrap Script -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="config.js"></script>
 
 </body>
 </html>

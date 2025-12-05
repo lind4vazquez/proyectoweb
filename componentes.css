@@ -1,0 +1,107 @@
+/* VARIABLES */
+:root{
+  --bg-dark:#0d1117;
+  --bg-card:#161b22;
+  --text-light:#ffffff; /* TODO EN BLANCO */
+  --muted:#d1d1d1;      /* Blanco suave para detalles */
+  --accent:#6ee7b7;
+  --radius:14px;
+}
+
+/* GLOBAL */
+body{
+  font-family:'Inter',sans-serif !important;
+  background:linear-gradient(180deg,#0a0f1c,#0d1117);
+  color:var(--text-light) !important;
+  margin:0;
+  min-height:100vh;
+}
+
+a, a:hover{
+  text-decoration:none;
+  color:var(--text-light) !important;
+}
+
+/* CONTENEDOR DEL PRODUCTO */
+#product-container{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:var(--text-light) !important;
+}
+
+/* PANEL DE IMAGEN */
+.product-img{
+  width:100%;
+  max-height:420px;
+  object-fit:contain;
+  border-radius:var(--radius);
+  background:#0f141b;
+  padding:15px;
+  box-shadow:0 0 12px rgba(0,0,0,0.35);
+  transition:transform .2s ease;
+}
+.product-img:hover{
+  transform:scale(1.02);
+}
+
+/* PANEL DE INFORMACIÓN */
+#product-container .col-md-7{
+  background:var(--bg-card);
+  padding:25px;
+  border-radius:var(--radius);
+  box-shadow:0 0 12px rgba(0,0,0,0.40);
+  color:var(--text-light) !important;
+}
+
+/* TITULOS Y SUBTITULOS */
+#product-container h1,
+#product-container h2,
+#product-container h3,
+#product-container h4,
+#product-container h5,
+#product-container h6{
+  color:#fff !important;
+}
+
+/* PRECIO: LO DEJO EN BLANCO TAMBIÉN */
+#product-container h4.text-success{
+  color:var(--accent) !important;
+}
+/* LISTAS */
+#product-container ul{
+  padding-left:18px;
+  margin-top:5px;
+}
+#product-container li{
+  margin-bottom:4px;
+  color:var(--muted) !important;
+}
+
+/* PARRAFOS */
+#product-container p{
+  color:var(--text-light) !important;
+  font-size:0.95rem;
+}
+
+/* BOTÓN VOLVER */
+.btn-secondary{
+  background:#202734 !important;
+  border:none;
+  padding:8px 16px;
+  border-radius:var(--radius);
+  color:#fff !important;
+}
+.btn-secondary:hover{
+  background:#2b3242 !important;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  #product-container{
+    text-align:center;
+  }
+  #product-container .col-md-7{
+    margin-top:20px;
+  }
+}

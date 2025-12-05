@@ -38,7 +38,7 @@
 <body>
 <div class="wrap">
 
-  <a href="index.html" class="back">← Regresar a productos</a>
+  <a href="index.php" class="back">← Regresar a productos</a>
 
   <h1>Carrito</h1>
 
@@ -50,6 +50,27 @@
     </div>
   </div>
 
+    <a href="pago.php" 
+   style="
+      display:inline-block;
+      margin-top:25px;
+      padding:10px 18px;
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.15);
+      border-radius:10px;
+      color:#e6eef6;
+      font-weight:600;
+      text-decoration:none;
+      backdrop-filter:blur(4px);
+      transition:0.2s;
+   "
+   onmouseover="this.style.background='rgba(255,255,255,0.12)'"
+   onmouseout="this.style.background='rgba(255,255,255,0.05)'">
+   Pagar
+</a>
+
 </div>
+
+<script src="carrito.js"></script>
 </body>
 </html>

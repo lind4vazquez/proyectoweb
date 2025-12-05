@@ -13,7 +13,7 @@
     <header>
         <div class="logo">
         <div class="mark">
-            <img src="imagenes/logo.png" alt="Logo">
+            <img src="img/logoPagina.jpg" alt="Logo">
         </div>
         <div>
             <strong>TiendaPC</strong>
@@ -21,32 +21,26 @@
         </div>
         </div>
 
-        <div class="search-box">
-        <input type="text" placeholder="Buscar productos...">
-        </div>
-
         <nav>
-        <a href="index.html">Inicio</a>
+        <a href="index.php">Inicio</a>
         <a href="sesion.html">Ingresar</a>
-        <a href="config.html">Configura tu PC</a>
+        <a href="config.php">Configura tu PC</a>
         </nav>
 
-        <a href="carrito.html">
-        <button class="btn">Carrito</button>
-        </a>
+
     </header>
     <div class="registro-card">
         <h3>Crear cuenta</h3>
         <p>Ingresa tus datos para registrarte</p>
-        <form method="post" action="index.html">
+        <form method="post" action="procesar_registro.php">
             <label>Usuario:</label>
-            <input type="text" name="nombre" required placeholder="Tu nombre de usuario">
+            <input type="text" name="usuario" required placeholder="Tu nombre de usuario">
             <label>Correo electrónico:</label>
             <input type="email" name="correo" required placeholder="ejemplo@correo.com">
             <label>Contraseña:</label>
-            <input type="password" name="contrasena" required placeholder="********">
+            <input type="password" name="password" required placeholder="********">
             <label>Confirmar contraseña:</label>
-            <input type="password" name="confirmar_contrasena" required placeholder="********"><br><br>
+            <input type="password" name="password2" required placeholder="********"><br><br>
             <button type="submit" class="registro-btn">Registrarse</button>
         </form>
     </div>
