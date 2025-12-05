@@ -128,5 +128,13 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="pago.js"></script>
+<script>
+  const formulario = document.querySelector("form");
+
+  formulario.addEventListener("submit", function () {
+    localStorage.removeItem("carrito");
+    localStorage.removeItem("totalPago");
+  });
+</script>
 </body>
 </html>

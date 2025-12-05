@@ -30,8 +30,8 @@
 
     <nav>
       <a href="#">Inicio</a>
-      <a href="registro.html">Registro</a>
-      <a href="config.html">Configura tu PC</a>
+      <a href="sesion.html">Ingresar</a>
+      <a href="config.php">Configura tu PC</a>
     </nav>
 
     <a href="carrito.php">
