@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "conexion.php"; // <--- Conexión a tu BD
+include "conexion.php";
 
 if (!isset($_SESSION['usuario_id']) || $_SESSION['tipo'] !== 'admin') {
     header("Location: index.php");
@@ -42,57 +42,83 @@ if (!isset($_SESSION['usuario_id']) || $_SESSION['tipo'] !== 'admin') {
   <div class="container mt-4">
     <h1>Bienvenido al Panel de Administración</h1>
     <p>Aquí puedes gestionar productos, usuarios y pedidos.</p>
-    <!-- Contenido del panel de administración -->
   </div>
+
   <?php
     // === CONSULTA USUARIOS ===
     $usuarios = $conexion->query("SELECT id, usuario, correo, tipo FROM usuarios");
 
-    // === CONSULTA PEDIDOS ===
+    // === CONSULTA VENTAS ===
     $pedidos = $conexion->query("SELECT id, id_usuario, monto, fecha FROM ventas");
-    ?>
-    <h2 class="mt-5 text-center">Usuarios Registrados</h2>
-    <table class="table table-striped mt-3">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nombre</th>
-                <th>Email</th>
-                <th>Tipo</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php while($u = $usuarios->fetch_assoc()): ?>
-            <tr>
-                <td><?= $u['id'] ?></td>
-                <td><?= $u['usuario'] ?></td>
-                <td><?= $u['correo'] ?></td>
-                <td><?= $u['tipo'] ?></td>
-            </tr>
-            <?php endwhile; ?>
-        </tbody>
-    </table>
-    <h2 class="mt-5 text-center">Ventas Registradas</h2>
-    <table class="table table-striped mt-3">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Id del Usuario</th>
-                <th>Monto</th>
-                <th>Fecha</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php while($u = $pedidos->fetch_assoc()): ?>
-            <tr>
-                <td><?= $u['id'] ?></td>
-                <td><?= $u['id_usuario'] ?></td>
-                <td><?= $u['monto'] ?></td>
-                <td><?= $u['fecha'] ?></td>
-            </tr>
-            <?php endwhile; ?>
-        </tbody>
-    </table>
+  ?>
 
+  <!-- === LISTA DE USUARIOS === -->
+  <h2 class="mt-5 text-center">Usuarios Registrados</h2>
+  <table class="table table-striped mt-3">
+      <thead>
+          <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Email</th>
+              <th>Tipo</th>
+              <th>Acciones</th>
+          </tr>
+      </thead>
+      <tbody>
+          <?php while($u = $usuarios->fetch_assoc()): ?>
+          <tr>
+              <td><?= $u['id'] ?></td>
+              <td><?= $u['usuario'] ?></td>
+              <td><?= $u['correo'] ?></td>
+              <td><?= $u['tipo'] ?></td>
+              <td>
+                  <!-- Evitar borrar al admin principal si quieres -->
+                  <?php if ($u['tipo'] !== 'admin'): ?>
+                      <a href="eliminar_usuario.php?id=<?= $u['id'] ?>"
+                         class="btn btn-danger btn-sm"
+                         onclick="return confirm('¿Seguro que deseas eliminar este usuario? Se eliminarán también sus ventas.');">
+                         Eliminar
+                      </a>
+                  <?php else: ?>
+                      <span class="text-muted">No disponible</span>
+                  <?php endif; ?>
+              </td>
+          </tr>
+          <?php endwhile; ?>
+      </tbody>
+  </table>
+
+  <!-- === LISTA DE VENTAS === -->
+  <h2 class="mt-5 text-center">Ventas Registradas</h2>
+  <table class="table table-striped mt-3">
+      <thead>
+          <tr>
+              <th>ID</th>
+              <th>Id del Usuario</th>
+              <th>Monto</th>
+              <th>Fecha</th>
+              <th>Acciones</th>
+          </tr>
+      </thead>
+      <tbody>
+          <?php while($u = $pedidos->fetch_assoc()): ?>
+          <tr>
+              <td><?= $u['id'] ?></td>
+              <td><?= $u['id_usuario'] ?></td>
+              <td>$<?= $u['monto'] ?></td>
+              <td><?= $u['fecha'] ?></td>
+              <td>
+                  <a href="eliminar_venta.php?id=<?= $u['id'] ?>"
+                     class="btn btn-danger btn-sm"
+                     onclick="return confirm('¿Seguro que deseas eliminar esta venta?');">
+                      Eliminar
+                  </a>
+              </td>
+          </tr>
+          <?php endwhile; ?>
+      </tbody>
+  </table>
+
+</div>
 </body>
 </html>
