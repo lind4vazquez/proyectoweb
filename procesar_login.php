@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 
     // Buscar usuario en la base
-    $sql = $conexion->prepare("SELECT id, usuario, password FROM usuarios WHERE usuario = ?");
+    $sql = $conexion->prepare("SELECT id, usuario, password, tipo FROM usuarios WHERE usuario = ?");
     $sql->bind_param("s", $usuario);
     $sql->execute();
     $resultado = $sql->get_result();
@@ -25,19 +25,32 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         // Verificar contraseña
         if (password_verify($password, $hash)) {
 
-            // Guardar sesión
             $_SESSION['usuario_id'] = $fila['id'];
             $_SESSION['id_usuario'] = $fila['id'];
             $_SESSION['usuario'] = $fila['usuario'];
+            $_SESSION['tipo'] = $fila['tipo']; 
 
-            header("Location: index.php");
-            exit;
-        } else {
-            echo "Contraseña incorrecta.";
+            // 👇 redirección automática
+            if ($fila['tipo'] === 'admin') {
+                header("Location: admin.php");
+                exit;
+            } else {
+                header("Location: index.php");
+                exit;
+            }
         }
+    else {
+                ?><html><script>
+            alert("Contraseña incorrecta.");
+            window.location.href = "sesion.html";
+        </script></html><?php
+            }
 
     } else {
-        echo "El usuario no existe.";
+        ?><html><script>
+            alert("El usuario no existe.");
+            window.location.href = "sesion.html";
+        </script></html><?php
     }
 
     $sql->close();

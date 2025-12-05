@@ -16,11 +16,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     // Validaciones básicas
     if (empty($usuario) || empty($correo) || empty($password) || empty($password2)) {
-        die('Faltan campos obligatorios.');
+        ?><html><script>
+            alert("Faltan campos por completar.");
+            window.location.href = "sesion.html";
+        </script></html><?php
     }
 
     if (!filter_var($correo, FILTER_VALIDATE_EMAIL)) {
-        die('Correo inválido.');
+        ?><html><script>
+            alert("Correo electrónico inválido.");
+            window.location.href = "sesion.html";
+        </script></html><?php
     }
     if($password !== $password2) {
         ?><script>
@@ -44,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $sql->close();
         $conexion->close();
         // Redirigir
-        header("Location: index.php");
+        header("Location: sesion.html");
         exit();
     } else {
         // Mostrar error del statement (útil para depurar)

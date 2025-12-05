@@ -16,7 +16,7 @@
   <header>
     <div class="logo">
       <div class="mark">
-        <img src="imagenes/logo.png" alt="Logo">
+        <img src="img/logoPagina.jpg" alt="Logo">
       </div>
       <div>
         <strong>TiendaPC</strong>
@@ -29,7 +29,7 @@
     </div>
 
     <nav>
-      <a href="#">Inicio</a>
+      <a href="index.php">Inicio</a>
       <a href="sesion.html">Ingresar</a>
       <a href="config.php">Configura tu PC</a>
     </nav>
